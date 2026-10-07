@@ -12,6 +12,18 @@ The model never authorizes or executes an action. The Worker has no booking,
 database, payment, webhook, or messaging binding, and every response reports
 `executed: false`.
 
+This repository is deployable as a secured synthetic reference after adding the
+account-specific Access and route settings below. It is intentionally one step
+before a real ticketing or booking integration: teams can validate the model,
+output checks, deterministic policy, rate controls, and observability without
+giving the Worker production data or side effects.
+
+To iterate toward a real use case, follow [From reference demo to real
+pilot](PILOTING.md). The recommended first integration accepts an opaque ticket
+or booking ID, retrieves an allowlisted record through a narrow server-side
+adapter, and compares Clef's recommendation with the human outcome in shadow
+mode. It does not execute an action.
+
 ## Decision boundary
 
 `POST /clef-demo/evaluate` accepts one field:
