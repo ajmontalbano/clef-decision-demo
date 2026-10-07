@@ -1,0 +1,35 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "summit-stone-clef-decision-demo",
+  "main": "src/index.js",
+  "compatibility_date": "2026-10-07",
+  "compatibility_flags": ["nodejs_compat"],
+  // This template intentionally has no route and no Access settings. Add the
+  // account-specific values described in README.md before deploying.
+  "workers_dev": false,
+  "vars": {
+    "BASE_PATH": "/clef-demo"
+  },
+  "ai": {
+    "binding": "AI"
+  },
+  "ratelimits": [
+    {
+      "name": "CLEF_DEMO_RATE_LIMITER",
+      // Replace with a positive integer unique within the target account.
+      "namespace_id": "1001",
+      "simple": {
+        "limit": 6,
+        "period": 60
+      }
+    }
+  ],
+  "observability": {
+    "enabled": true,
+    "logs": {
+      "enabled": true,
+      "invocation_logs": false,
+      "head_sampling_rate": 1
+    }
+  }
+}
