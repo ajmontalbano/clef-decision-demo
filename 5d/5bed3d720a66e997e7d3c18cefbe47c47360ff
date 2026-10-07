@@ -1,0 +1,25 @@
+package-lock.json
+  s_ba2cc4e1d94e5c::t_aba7d10ccb291d 1-2796
+src/authorization-policy.js
+  s_ba2cc4e1d94e5c::t_63c9c8eb3469eb 1-51
+src/index.js
+  s_ba2cc4e1d94e5c::t_c2744a6fda005e 1-590
+test/index.spec.js
+  s_ba2cc4e1d94e5c::t_6f1d4df20811c5 1-461
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.10",
+  "base_commit_sha": "5d5bed3d720a66e997e7d3c18cefbe47c47360ff",
+  "prompts": {},
+  "sessions": {
+    "s_ba2cc4e1d94e5c": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_ef04d837bffe68HOQcaFptKtQx",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "Adam Montalbano <amontalbano@cloudflare.com>"
+    }
+  }
+}
