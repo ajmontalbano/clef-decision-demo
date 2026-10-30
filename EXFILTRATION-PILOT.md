@@ -14,7 +14,7 @@ Use Cloudflare's existing controls for the boundaries they already cover:
   requests and responses.
 - Access, WAF, Managed Rules, and rate limiting: inbound protection when the
   MCP server itself is Internet-facing.
-- The Vendelux router: tenant authorization, customer-specific baselines,
+- The application router: tenant authorization, customer-specific baselines,
   rolling behavior, and the final allow, review, throttle, or deny decision.
 
 Standard DLP is useful when the data matches a known sensitive-data profile.
@@ -25,7 +25,7 @@ AI prompt DLP profiles do not apply to MCP portal traffic.
 
 ```text
 authenticated MCP actor
-  -> Vendelux router resolves customer and tool authorization
+  -> trusted router resolves customer and tool authorization
   -> router reads rolling counters for that actor and customer
   -> deterministic tenant, tool, and volume policy
   -> Clef evaluates normalized metrics only when hard boundaries pass
@@ -95,7 +95,7 @@ mistake the recommendation for an enforcement result.
 
 ## Rolling State
 
-The sample deliberately does not invent a storage design for Vendelux. Its
+The sample deliberately does not prescribe a customer storage design. Its
 counter input is advisory and is not sufficient for concurrent enforcement.
 The router must first define the correlation key and window:
 
