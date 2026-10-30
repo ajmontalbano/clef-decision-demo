@@ -24,6 +24,12 @@ or booking ID, retrieves an allowlisted record through a narrow server-side
 adapter, and compares Clef's recommendation with the human outcome in shadow
 mode. It does not execute an action.
 
+For the MCP data-exfiltration use case, see [MCP Data Exfiltration
+Pilot](EXFILTRATION-PILOT.md). It adds a tested, shadow-only callout that applies
+deterministic tenant, tool, and volume boundaries before asking Clef to classify
+normalized rolling metrics. It does not send raw MCP payloads or customer
+records to the model.
+
 ## Decision boundary
 
 `POST /clef-demo/evaluate` accepts one field:
