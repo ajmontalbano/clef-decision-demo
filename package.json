@@ -4,7 +4,7 @@
   "private": true,
   "description": "Access-gated synthetic Cloudflare Clef decision model reference Worker",
   "scripts": {
-    "check": "node --check src/index.js && node --check src/authorization-policy.js && npm test && wrangler deploy --dry-run",
+    "check": "node --check src/index.js && node --check src/authorization-policy.js && node --check src/mcp-exfiltration-guard.js && node --check examples/mcp-exfiltration-callout.js && npm test && wrangler deploy --dry-run",
     "test": "vitest run"
   },
   "devDependencies": {
